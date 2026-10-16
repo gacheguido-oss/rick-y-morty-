@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explorador de personajes de Rick and Morty">
+  <title>Rick & Morty Explorer</title>
+  <link rel="stylesheet" href="stile.css">
+</head>
+<body>
+
+  <header class="header">
+    <a href="#" class="logo">RICK <span>&</span> MORTY</a>
+    <span class="header-label">MULTIVERSE EXPLORER</span>
+  </header>
+
+  <main class="container">
+
+    <section class="hero">
+      <p class="eyebrow">CENTRAL DE EXPLORACIÓN</p>
+      <h1>Explorá el <span>multiverso.</span></h1>
+      <p class="subtitle">
+        Encontrá personajes, descubrí planetas y recorré episodios
+        de todas las dimensiones.
+      </p>
+    </section>
+
+    <section class="filters">
+      <div class="search-box">
+        <label for="search">Buscar personaje</label>
+        <input
+          type="search"
+          id="search"
+          placeholder="Ej: Rick Sanchez..."
+          autocomplete="off"
+        >
+      </div>
+
+      <div class="filter-box">
+        <label for="status">Estado</label>
+        <select id="status">
+          <option value="">Todos</option>
+          <option value="alive">Vivo</option>
+          <option value="dead">Muerto</option>
+          <option value="unknown">Desconocido</option>
+        </select>
+      </div>
+
+      <div class="filter-box">
+        <label for="species">Especie</label>
+        <select id="species">
+          <option value="">Todas</option>
+          <option value="Human">Humano</option>
+          <option value="Alien">Alienígena</option>
+          <option value="Robot">Robot</option>
+          <option value="Animal">Animal</option>
+          <option value="Humanoid">Humanoide</option>
+          <option value="Mythological Creature">Criatura mitológica</option>
+          <option value="Poopybutthole">Poopybutthole</option>
+        </select>
+      </div>
+
+      <button id="clearFilters" class="clear-btn" type="button">
+        Limpiar filtros
+      </button>
+    </section>
+
+    <section class="results-section">
+
+      <div class="results-header">
+        <div>
+          <p class="eyebrow">BASE DE DATOS</p>
+          <h2>Personajes <span id="pageNumber"></span></h2>
+        </div>
+        <p id="resultsCount" class="results-count">Cargando...</p>
+      </div>
+
+      <div id="message" class="message" role="status" aria-live="polite">
+        Conectando con el multiverso...
+      </div>
+
+      <div id="characters" class="character-grid"></div>
+
+      <nav id="pagination" class="pagination" aria-label="Paginación">
+        <button id="prevPage" type="button">← Anterior</button>
+        <span id="pageInfo">Página 1</span>
+        <button id="nextPage" type="button">Siguiente →</button>
+      </nav>
+
+    </section>
+  </main>
+
+  <dialog id="characterDialog" class="character-dialog">
+    <button
+      id="closeDialog"
+      class="close-dialog"
+      type="button"
+      aria-label="Cerrar"
+    >✕</button>
+
+    <div id="characterDetails"></div>
+  </dialog>
+
+  <footer>
+    <p>Hecho con 💚 para explorar el multiverso.</p>
+    <a
+      href="https://rickandmortyapi.com/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >Datos proporcionados por Rick and Morty API</a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
